@@ -163,12 +163,12 @@ Existem 6 tipos de escopos que podem ser utilizados:
 
 ##### Escopo `provided`
 
-```bash
+```xml
 <dependency>
-  <groupId>javax.servlet</groupId>
-  <artifactId>javax.servlet-api</artifactId>
-  <version>3.1.0</version>
-  <scope>provided</scope>
+   <groupId>javax.servlet</groupId>
+   <artifactId>javax.servlet-api</artifactId>
+   <version>3.1.0</version>
+   <scope>provided</scope>
 </dependency>
 ```
 
@@ -179,7 +179,7 @@ Existem 6 tipos de escopos que podem ser utilizados:
 
 ##### Escopo `runtime`
 
-```bash
+```xml
 <dependency>
   <groupId>mysql</groupId>
   <artifactId>mysql-connector-java</artifactId>
@@ -193,7 +193,7 @@ Existem 6 tipos de escopos que podem ser utilizados:
 
 ##### Escopo `test`
 
-```bash
+```xml
 <dependency>
   <groupId>junit</groupId>
   <artifactId>junit</artifactId>
@@ -208,7 +208,7 @@ Existem 6 tipos de escopos que podem ser utilizados:
 
 ##### Escopo `system`
 
-```bash
+```xml
 <dependency>
   <groupId>com.oracle</groupId>
   <artifactId>ojdbc6</artifactId>
@@ -226,7 +226,7 @@ Existem 6 tipos de escopos que podem ser utilizados:
 
 ##### Escopo `import`
 
-```bash
+```xml
 <dependencyManagement>
   <dependencies>
     <dependency>
@@ -248,7 +248,7 @@ Existem 6 tipos de escopos que podem ser utilizados:
 > [!NOTE]
 > **Dependências opcionais:**   
 > São dependências não necessárias para os projetos que irão reutilizar seu componente.
-> ```bash
+> ```xml
 > <dependency>
 >   <groupId>com.google.code.gson</groupId>
 >   <artifactId>gson</artifactId>
@@ -260,17 +260,17 @@ Existem 6 tipos de escopos que podem ser utilizados:
 > [!NOTE]
 > **Exclusão de dependências:**  
 > Utilizadas quando o componente a ser utilizado compartilha uma biblioteca já possuída ou quando a dependência não é necessária.
-> ```bash
+> ```xml
 > <dependency>
->  <groupId>org.apache.maven</groupId>
-> <artifactId>maven-core</artifactId>
-> <version>3.0</version>
-> <exclusions>
->  <exclusion>
->  <groupId>org.apache.maven</groupId>
-> <artifactId>maven-artifact</artifactId>
-> </exclusion>
-> </exclusions>
+>   <groupId>org.apache.maven</groupId>
+>   <artifactId>maven-core</artifactId>
+>   <version>3.0</version>
+>   <exclusions>
+>       <exclusion>
+>           <groupId>org.apache.maven</groupId>
+>           <artifactId>maven-artifact</artifactId>
+>       </exclusion>
+>   </exclusions>
 > </dependency>
 > ```
 > Neste exemplo, a dependência `maven-artifact` foi excluída da dependência `maven-core`.
@@ -320,7 +320,7 @@ graph LR
 
 Para iniciar um projeto multi-módulos, basta criar um projeto pai e realizar os seguintes passos:
 1. Adicionar (ou alterar, caso já exista) a tag `<packaging>` no arquivo `pom.xml` deste projeto pai, para funcionar como `pom`.
-   ```bash
+   ```xml
    <packaging>pom</packaging>
    ```
 
@@ -330,7 +330,7 @@ Para iniciar um projeto multi-módulos, basta criar um projeto pai e realizar os
    ```
 
 3. Após rodar o comando acima, o módulo será automaticamente adicionado ao arquivo `pom.xml` projeto pai. Caso não seja, adicione manualmente a tag `<modules>` e insira o nome do módulo, como no exemplo abaixo:
-   ```bash
+   ```xml
    <modules>
      <module>core</module>
    </modules>
